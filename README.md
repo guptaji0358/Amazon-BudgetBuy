@@ -16,7 +16,7 @@ If the product becomes affordable, BudgetBuy can send an email notification 📧
 - ✅ Budget comparison system
 - ✅ Email alert notifications
 - ✅ Colored terminal UI
-- ✅ Input validation
+= ✅ Input validation
 - ✅ Error handling
 - ✅ Beginner-friendly clean code
 - ✅ Real-world automation project
@@ -37,7 +37,7 @@ If the product becomes affordable, BudgetBuy can send an email notification 📧
 
 Install required libraries:
 
-```bash id="m0i7jw"
+```bash id="8kq5ae"
 pip install requests beautifulsoup4 colorama
 ```
 
@@ -45,13 +45,13 @@ pip install requests beautifulsoup4 colorama
 
 # 🚀 Run The Project
 
-```bash id="6f5jwr"
+```bash id="4x9l7q"
 py 47_AMAZON_BUDGET_BUY.py
 ```
 
 OR
 
-```bash id="8v9h7p"
+```bash id="s8n7ka"
 python 47_AMAZON_BUDGET_BUY.py
 ```
 
@@ -61,13 +61,13 @@ python 47_AMAZON_BUDGET_BUY.py
 
 Open:
 
-```bash id="zyjlwm"
+```bash id="w6d0lb"
 47_AMAZON_BUDGET_BUY.py
 ```
 
 Find this section:
 
-```python id="c1a0dt"
+```python id="9j0m8r"
 UserGmail = "YOUR_GMAIL@gmail.com"
 UserPassword = "YOUR_APP_PASSWORD"
 ReceiverMail = "RECEIVER@gmail.com"
@@ -77,7 +77,7 @@ Replace with your own email details.
 
 Example:
 
-```python id="r0ahcz"
+```python id="a7x3po"
 UserGmail = "robinexample@gmail.com"
 UserPassword = "abcd efgh ijkl mnop"
 ReceiverMail = "myalerts@gmail.com"
@@ -107,7 +107,7 @@ Go to your Google Account settings.
 
 Search for:
 
-```text id="1em3pr"
+```text id="gx7a6q"
 2-Step Verification
 ```
 
@@ -121,7 +121,7 @@ After enabling 2-Step Verification:
 
 Search:
 
-```text id="k7l8c6"
+```text id="n1t6mc"
 App Passwords
 ```
 
@@ -133,14 +133,14 @@ Open it.
 
 Select:
 
-```text id="fw0rq9"
+```text id="3j0z7r"
 App → Mail
 Device → Windows Computer
 ```
 
 Click:
 
-```text id="13dc0g"
+```text id="q8f1el"
 Generate
 ```
 
@@ -150,13 +150,13 @@ Generate
 
 Google will generate a password like:
 
-```text id="l2g2lx"
+```text id="v7o5qw"
 abcd efgh ijkl mnop
 ```
 
 Paste it inside:
 
-```python id="cxf7pu"
+```python id="v9l0bx"
 UserPassword = ""
 ```
 
@@ -170,7 +170,7 @@ Before pushing your project to GitHub:
 
 Replace credentials with:
 
-```python id="qf1p91"
+```python id="z1x4nk"
 UserGmail = ""
 UserPassword = ""
 ReceiverMail = ""
@@ -189,24 +189,34 @@ This keeps your account safe 🔐
 
 ---
 
-# 📸 Preview
+# 🎬 Demo
 
-```bash id="ay7l0g"
+## Example Product URL
+
+```text id="5x4o7n"
+https://files.catbox.moe/0mcmj9.mp4
+```
+
+## Example Run
+
+```bash id="4t9m1p"
 🛒 AMAZON PRICE TRACKER
 
 🔗 Paste Amazon Product URL:
-https://amazon.in/...
+https://www.amazon.in/dp/B0CHX1W1XY
 
 💰 Enter Your Target Price:
 50000
 
 📦 Product:
-Apple iPhone 15
+Apple iPhone 15 (Black, 128 GB)
 
 💰 Current Price:
 ₹48999
 
 🎉 Product Is Within Your Budget!
+
+📧 Email Alert Sent Successfully!
 ```
 
 ---
