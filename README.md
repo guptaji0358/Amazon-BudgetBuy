@@ -269,20 +269,20 @@ ReceiverMail = "myalerts@gmail.com"</code></pre>
     </td>
   </tr>
   <tr>
-    <td>
-      <br />
-      <p>This project is completely open-source for learning and development. Developers are encouraged to fork, enhance, and build upon this core engine!</p>
-      
-      <h4>💡 Future Roadmap & Contribution Ideas:</h4>
-      <ul>
-        <li>🛍️ <b>Flipkart Integration</b></li>
-        <li>👕 <b>Myntra Integration</b></li>
-        <li>🛒 <b>Meesho & Ajio Scraping Support</b></li>
-        <li>📊 <b>Price History Analytics & Graphical Dashboard</b></li>
-        <li>💻 <b>GUI Interface (Tkinter / PyQt)</b></li>
-      </ul>
-      <br />
-    </td>
+   <td>
+<br />
+<p>This project is completely open-source for learning and development. Developers are encouraged to fork, enhance, and build upon this core engine!</p>
+
+<h4>💡 Future Roadmap & Contribution Ideas:</h4>
+<ul>
+<li>🛍️ <b>Flipkart Integration</b></li>
+<li>👕 <b>Myntra Integration</b></li>
+<li>🛒 <b>Meesho & Ajio Scraping Support</b></li>
+<li>📊 <b>Price History Analytics & Graphical Dashboard</b></li>
+<li>💻 <b>GUI Interface (Tkinter / PyQt)</b></li>
+</ul>
+<br />
+</td>
   </tr>
 </table>
 
