@@ -211,12 +211,12 @@ ReceiverMail = "myalerts@gmail.com"</code></pre>
       <p><i>⚠️ <b>Note:</b> Do NOT use your normal Gmail password. Google blocks standard passwords for SMTP authentication. You must generate a 16-digit <b>Google App Password</b>.</i></p>
       
       <ol>
-        <li><b>Open Google Account Settings:</b> Go to your Google Account security settings.</li>
-        <li><b>Enable 2-Step Verification:</b> Search for <code>2-Step Verification</code> and turn it ON.</li>
-        <li><b>Open App Passwords:</b> Search for <code>App Passwords</code> in the search bar.</li>
-        <li><b>Generate Password:</b> Select <code>App ➔ Mail</code> and <code>Device ➔ Windows Computer</code> (or your OS), then click <b>Generate</b>.</li>
-        <li><b>Copy Password:</b> Google will provide a 16-character code (e.g., <code>abcd efgh ijkl mnop</code>). Paste this directly into <code>UserPassword = ""</code>.</li>
-      </ol>
+  <li><b>Open Google Account Settings:</b> Go to your Google Account security settings.</li>
+  <li><b>Enable 2-Step Verification:</b> Search for <code>2-Step Verification</code> and turn it ON.</li>
+  <li><b>Open App Passwords:</b> Search for <code>App Passwords</code> in the search bar.</li>
+  <li><b>Generate Password:</b> Select <code>App → Mail</code> and <code>Device → Windows Computer</code> (or your OS), then click <b>Generate</b>.</li>
+  <li><b>Copy Password:</b> Google will provide a 16-character code (e.g., <code>abcd efgh ijkl mnop</code>). Paste this directly into <code>UserPassword = ""</code>.</li>
+</ol>
       <br />
     </td>
   </tr>
