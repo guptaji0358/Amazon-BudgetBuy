@@ -6,7 +6,7 @@
 </a>
 
 <h3><code>DAY 47 / 100 DAYS OF CODE</code></h3>
-<p><b>An Intelligent Amazon Price Tracker & Automated Email Notification Engine Built in Python</b></p>
+<p><b>A Multi-Platform Price Tracker with Seller Authenticity Checks & Automated Email Alerts Built in Python</b></p>
 
 <!-- ACTION BUTTONS -->
 <p>
@@ -38,13 +38,13 @@
 <table width="100%">
 <tr>
 <td align="center" colspan="2" bgcolor="#0d1117">
-<h2>✨ Key Capabilities & Features</h2>
+<h2>✨ Key Capabilities & Features (v2.0)</h2>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-<h4>📦 Live Product Scraping</h4>
-<p>Parses live Amazon DOM nodes using <code>BeautifulSoup4</code> and custom HTTP headers to extract real-time product titles and current prices.</p>
+<h4>🌐 Multi-Platform Scraping</h4>
+<p>Dedicated scrapers for <b>Amazon, Flipkart and Myntra</b>, plus a heuristic <b>Generic scraper</b> that auto-detects title, price and seller on any other store. The right scraper is picked from the URL.</p>
 </td>
 <td width="50%" valign="top">
 <h4>💰 Budget Comparison Engine</h4>
@@ -53,12 +53,22 @@
 </tr>
 <tr>
 <td width="50%" valign="top">
-<h4>📧 Automated Email Notifications</h4>
-<p>Fires instant, automated price drop alert emails directly to your inbox via Gmail's secure SMTP server protocol.</p>
+<h4>📧 Configurable Email Alerts</h4>
+<p>Sends price-drop emails via Gmail SMTP. Choose <b>Auto</b>, <b>Ask</b> (Y/N each time) or <b>Never</b> mode, and set up or change credentials from the in-app <code>S</code> settings menu.</p>
 </td>
 <td width="50%" valign="top">
 <h4>🎨 Interactive Colored Terminal UI</h4>
-<p>Features a color-coded command-line interface styled with <code>Colorama</code>, robust input validation, and user execution loops.</p>
+<p>A boxed welcome banner, color-coded output via <code>Colorama</code>, robust input validation, and replayable execution loops.</p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h4>🛡️ Seller Authenticity Check</h4>
+<p>Best-effort heuristic that labels a listing <b>Official</b>, <b>Third-Party</b> or <b>Unknown</b> from the seller name, and warns on non-HTTPS links. It is a hint, not a guarantee.</p>
+</td>
+<td width="50%" valign="top">
+<h4>🔐 Local Settings File</h4>
+<p>Credentials are stored in a git-ignored <code>settings.json</code> created on first run, so nothing sensitive lives in source code.</p>
 </td>
 </tr>
 </table>
@@ -98,21 +108,23 @@
 <tr>
 <td>
 <pre><code>=================================================================
-🛒 AMAZON PRICE TRACKER
+🛒 BUDGET BUY v2.0 — Multi-Platform Price Tracker
 =================================================================
 
-🔗 Paste Amazon Product URL:
+🔗 Paste Product URL (Or 'S' For Settings):
 https://www.amazon.in/dp/B0CHX1W1XY
 
 💰 Enter Your Target Price ₹:
 50000
 
-⏳ Fetching Product Details...
+⏳ Fetching Product Details Using Amazon Scraper...
 🌐 Status Code: 200
 -----------------------------------------------------------------
 📦 Product:
 Apple iPhone 15 (Black, 128 GB)
 
+🧾 Seller        : Appario Retail Private Ltd
+🛡️  Authenticity : Likely Official
 💰 Current Price: ₹48,999
 🎯 Target Price: ₹50,000
 -----------------------------------------------------------------
@@ -181,14 +193,11 @@ cd Amazon-BudgetBuy</code></pre>
 <li><b>Install Dependencies:</b>
 <pre><code>pip install requests beautifulsoup4 colorama</code></pre>
 </li>
-<li><b>Configure Credentials in Script:</b>
-<p>Open <code>47_AMAZON_BUDGET_BUY.py</code> and update your credentials:</p>
-<pre><code>UserGmail = "robinexample@gmail.com"
-UserPassword = "abcd efgh ijkl mnop" # Google App Password
-ReceiverMail = "myalerts@gmail.com"</code></pre>
+<li><b>Run the App:</b>
+<pre><code>python main.py</code></pre>
 </li>
-<li><b>Execute the Script:</b>
-<pre><code>python 47_AMAZON_BUDGET_BUY.py</code></pre>
+<li><b>First-Run Email Setup:</b>
+<p>You will be prompted for your Gmail address, Google App Password, receiver email and send mode (Auto / Ask / Never). Values are saved to <code>settings.json</code>. Type <code>S</code> at the URL prompt anytime to change them.</p>
 </li>
 </ol>
 <br />
@@ -216,7 +225,7 @@ ReceiverMail = "myalerts@gmail.com"</code></pre>
 <li><b>Enable 2-Step Verification:</b> Search for <code>2-Step Verification</code> and turn it ON.</li>
 <li><b>Open App Passwords:</b> Search for <code>App Passwords</code> in the search bar.</li>
 <li><b>Generate Password:</b> Select <code>App → Mail</code> and <code>Device → Windows Computer</code> (or your OS), then click <b>Generate</b>.</li>
-<li><b>Copy Password:</b> Google will provide a 16-character code (e.g., <code>abcd efgh ijkl mnop</code>). Paste this directly into <code>UserPassword = ""</code>.</li>
+<li><b>Copy Password:</b> Google will provide a 16-character code (e.g., <code>abcd efgh ijkl mnop</code>). Enter it when the app asks for your <b>Gmail App Password</b>.</li>
 </ol>
 <br />
 </td>
@@ -231,7 +240,35 @@ ReceiverMail = "myalerts@gmail.com"</code></pre>
 <td align="center" bgcolor="#161b22" style="border: 1px solid #d29922;">
 <h3 style="color: #d29922;">🔒 Security Alert</h3>
 <p><b>Never upload real Gmail credentials or App Passwords to GitHub!</b><br />
-Always clear credentials back to empty strings <code>""</code> before committing changes to public repositories.</p>
+Credentials are saved in <code>settings.json</code>, which is listed in <code>.gitignore</code>. Keep it that way and never commit it.</p>
+</td>
+</tr>
+</table>
+
+<br />
+
+<!-- PROJECT STRUCTURE -->
+<table width="100%">
+<tr>
+<td align="center" bgcolor="#0d1117">
+<h2>📁 Project Structure</h2>
+</td>
+</tr>
+<tr>
+<td>
+<pre><code>BudgetBuy/
+├── main.py           # Entry point & main loop
+├── banner.py         # Welcome banner
+├── display.py        # Product details & authenticity output
+├── email_alert.py    # Gmail SMTP alerts
+├── settings.py       # settings.json load/save & setup menu
+├── config.py         # HTTP headers
+└── scrapers/
+    ├── base.py       # BaseScraper + authenticity heuristic
+    ├── amazon.py
+    ├── flipkart.py
+    ├── myntra.py
+    └── generic.py    # Auto-detect fallback</code></pre>
 </td>
 </tr>
 </table>
@@ -254,6 +291,8 @@ Always clear credentials back to empty strings <code>""</code> before committing
 <li><b>Automated Email Pipeline:</b> SSL/TLS encrypted SMTP email dispatching with <code>smtplib</code>.</li>
 <li><b>Data Cleaning & Validation:</b> Parsing string currencies into float primitives for evaluation.</li>
 <li><b>Terminal User Experience:</b> Color-coded CLI workflows using <code>Colorama</code>.</li>
+<li><b>Modular Architecture:</b> A <code>BaseScraper</code> class with per-platform subclasses and URL-based scraper selection.</li>
+<li><b>Persistent Configuration:</b> JSON-backed settings with interactive first-run setup.</li>
 </ul>
 <br />
 </td>
@@ -276,9 +315,9 @@ Always clear credentials back to empty strings <code>""</code> before committing
 
 <h4>💡 Future Roadmap & Contribution Ideas:</h4>
 <ul>
-<li>🛍️ <b>Flipkart Integration</b></li>
-<li>👕 <b>Myntra Integration</b></li>
-<li>🛒 <b>Meesho & Ajio Scraping Support</b></li>
+<li>✅ <s>Flipkart, Myntra & generic-site support</s> (done in v2.0)</li>
+<li>🛒 <b>Dedicated Meesho & Ajio Scrapers</b></li>
+<li>⏰ <b>Scheduled / Background Price Monitoring</b></li>
 <li>📊 <b>Price History Analytics & Graphical Dashboard</b></li>
 <li>💻 <b>GUI Interface (Tkinter / PyQt)</b></li>
 </ul>

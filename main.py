@@ -6,6 +6,7 @@ from colorama import Fore, Style, init
 from scrapers import GetScraperForURL, SupportedPlatforms
 from email_alert import SendPriceAlert
 from display import ShowProductDetails
+from banner import ShowBanner
 from settings import GetOrCreateSettings, ConfigureEmailSettings, EmailMode_Auto, EmailMode_Ask, EmailMode_Never
 
 # ===================== INITIALIZE COLORAMA =====================
@@ -19,11 +20,7 @@ Replay = True
 while Replay:
 
     # ===================== HEADER =====================
-    print(Fore.CYAN + "=" * 65)
-    print(Style.BRIGHT + Fore.YELLOW + "🛒 BUDGET BUY - PRICE TRACKER")
-    print(Fore.CYAN + f"Supported Platforms: {', '.join(SupportedPlatforms())}")
-    print(Fore.CYAN + f"📧 Email Mode: {SettingsData['EmailMode']}  (Type 'S' Below To Change)")
-    print(Fore.CYAN + "=" * 65)
+    ShowBanner(SettingsData, SupportedPlatforms())
 
     # ===================== URL INPUT =====================
     while True:
